@@ -49,7 +49,9 @@ All trees are not equal, meaning some have more wood in them than others. The lo
  - Amount of Wood in Tree
     `Starting Wood * (1 + 0,075) ^ Minutes Since the Tree Spawned`
  
-Trees do not block unit pathing, instead units passing through trees will simply be slowed slightly. Units passing through trees will also have a reduced Line of Sight, and archers arrows, might strike the trees instead of their target, reducing their accuracy.
+Trees do not block unit pathing, instead units passing through trees will simply be slowed slightly. Units passing through trees will also have a reduced Line of Sight, and archers arrows or siege weapon fire, might strike the trees instead of their target, reducing their accuracy. All of this can be altered, if a player is worshiping a God that does so, but as a default, this is the rules that apply to trees.
+
+By default trees block placement of buildings. This however can be altered, like the other limitations, depending on the gods that are worshiped. If a god allow placement on trees, then the worker will chop the trees in the way, before building the building. They will not gather the resources from the trees, but the trees will be removed, to make room for the building. Due to this, building on trees are slightly slower, but is possible in the right circumstances, if space is running low.
 
 ### Stone
 Stone is gathered by quarrying from a Stone Quarry. Stone Quarries commonly spawns around mountainous terrain, but can spawn anywhere on a map. Stone Quarries come in three sizes; Small, Medium and Large. How much each Quarry hold, is dependent on the amount of players in the map. 
@@ -75,12 +77,27 @@ Gold can be gotten from a few sources. The most common way is to mine it, from G
  - Large Mine
  `2500 * (1 + 0.12) ^ Amount of Players + 120 * Amount of Players`
 
-Another source of gold, is from Caravans running between a players Market and a Town Center, owned by the player or an Ally. The amount of hold gained when the caravan returns, scale with the distance between the Market and Town Center, that is being traded with, plus a 50% bonus, if its an ally Town Center.
+Another source of gold, is from Caravans running between a players Market and a Town Center, owned by the player or an Ally. The amount of gold gained when the caravan returns, scale with the distance between the Market and Town Center, that is being traded with, plus a 50% bonus, if its an ally Town Center.
 
  - Caravan Gold (without bonus)
      `30 * Ln(Meters Traveled by the Caravan)`
   - Caravan Gold (with bonus)
     `(30 * Ln(Meters Traveled by the Caravan)) * 1.5`
+
+### Population
+Population is gained by building certain buildings. It is needed to house any human units that is being trained, or has been trained. Most mythological monster also require Population, but not all.
+
+Population is a fixed value, meaning if you have buildings to support 20 units, units build will only fill up to the limit. Should a unit die, it will free up the used population.
+
+If somehow a player manages to have more units than their cap, they will be penalized, by reducing the effectiveness of gathering all other resources. Because of this, it can be valuable for players wishing to hurt others, to destroy buildings that supply the enemy with population, to in turn hurt the economy.
+
+### Favor
+The last resource is Favor, which is also the most unique of the resources, as each Civilization has their own way of generating it. As such how it gets produced will be described under each civilization instead of here.
+
+How much Favor a player can keep stored isn't infinite, unlike Food, Wood, Stone and Gold. The Favor capacity scales with the amount of Major and Minor Gods worshiped, along with a starting amount. The following equation determines how much Favor can be stored.
+
+ - Favor Capacity
+    `100 + 100 * Major Gods Worshiped + 50 * Minor Gods Worshiped`
 
 ## Temple to the Gods
 Instead of advancing to different ages, the player will have to build Temples to the Gods that the player wish to worship. 
@@ -125,6 +142,36 @@ The game contains the known civilizations from Age of Mythology Extended Edition
  - Mayan
  - Aztec
 
+### Gods Details
+Each god, for the different Civilizations has a number of attributes linked to them. Among these attributes are which section of your Civilization that they target, being Offensive, Defensive or Economic capabilities. They all target a Primary and Secondary capability. Gods also have status as to whether they are a Minor or Major Gods.
+
+God powers supplied by gods, comes in three tiers; Aura, Passive and Active. If a god gives an Active god power they will also give other two tiers, and if a god gives a Passive god power they will also give an Aura.
+
+Aura god powers, are constant effects around specified areas of the maps. These possible areas include but are not limited to
+ - Natural terrain
+ - Player buildings
+ - Player units
+As a Aura god power is a Constant effect, they have a lower general impact.
+
+Passive god powers, are effect that can trigger when certain events happen in the game. These events can include, but are not limited to:
+ - Player buildings being attacked
+ - Player building being destroyed
+ - Player buildings deals damage
+ - Player entering combat
+ - Player attempting to exit combat
+	 - i.e retreating from enemies
+ - Player units takes damage
+ - Player units deal damage
+ - Player unit dies
+Effects from Passive god powers are more potent then those from Aura effects, but still weaker than Active god powers.
+
+Active god powers, are effects that the player actively uses on an area of the map. Some active god powers, have a global reach, but most only target a section of the map. Almost all active god powers require line of sight to cast. All active god powers can be used any number of times, with the limitation that there is a cooldown, between uses. How long the cooldown is, depends on how powerful the effect it has. Only Major gods is able to supply the player with Active god powers, and as such, almost all major gods does so.
+
+All the different tiers of god powers are in general centralized around the same effect, in varying degrees of intensity. The Active god powers will always be focused on the gods primary capability, but the Passive and Aura tiers, are not guaranteed to target the primary capability. 
+
+The intensity of all god powers, including all tiers, scales with the amount of other liked or disliked worshiped gods. As such active god powers can, with the right worshiped gods, become game ending. Some gods will apply additional effects to other liked gods, god powers.
+
+### Generic Buildings
 Civilization all have a version of the generic buildings, but may also have buildings unique to the specific civilization. Each building, unique or not, has a set of requirement, before they can be build. These requirements include:
 
  - Resource cost of the Building (Food, Wood, Stone, Gold, Favor)
@@ -136,9 +183,7 @@ Civilization all have a version of the generic buildings, but may also have buil
 
 Some Civilization might have a more specialized version of a generic building, with additional properties. Unless specified otherwise, all civilization have all generic buildings. How much each building can be improved by technologies varies from civilization to civilization. 
 
-### Buildings
-#### Generic
-##### Shrine
+#### Shrine
 Shrines are a building that the player can build any number of, which can train unlocked mythological monster, and hold up to two relic.
  
 To build a Shrine a player has to worship at least one god. 
@@ -147,6 +192,111 @@ Building it cost:
  - Wood: 
  - Favor: 
 
- 
+### Generic Units
+Much like buildings all Civilizations have a version of the generic units, but again they might have a more specialized version, which will then be specified in the civilizations units section. Again, just like buildings there are requirement to train units, which is as follows:
+
+ - Resource cost of the Unit (Food, Wood, Stone, Gold, Favor)
+ - Minimum Worshiped gods - Value of zero means from start of game.
+	 - Minimum Worshiped Major gods 
+	 - Minimum Worshiped Minor gods
+- Specific Worshiped God
+	- Not all Units has this requirement
+
+### Greek
+
+#### Gods
+
+#### Favor Generation
+
+#### Specific Buildings
+
+#### Specific Units
+
+### Egyptian
+
+#### Gods
+
+#### Favor Generation
+
+#### Specific Buildings
+
+#### Specific Units
+
+### Norse
+
+#### Gods
+
+#### Favor Generation
+
+#### Specific Buildings
+
+#### Specific Units
+
+### Atlantean
+
+#### Gods
+
+#### Favor Generation
+
+#### Specific Buildings
+
+#### Specific Units
+
+### Chinese
+
+#### Gods
+
+#### Favor Generation
+
+#### Specific Buildings
+
+#### Specific Units
+
+### Japanese
+
+#### Gods
+
+#### Favor Generation
+
+#### Specific Buildings
+
+#### Specific Units
+
+#### Gods
+
+#### Favor Generation
+
+#### Specific Buildings
+
+#### Specific Units
+
+### Indian
+#### Gods
+
+#### Favor Generation
+
+#### Specific Buildings
+
+#### Specific Units
+
+### Mayan
+
+#### Gods
+
+#### Favor Generation
+
+#### Specific Buildings
+
+#### Specific Units
+
+### Aztec
+#### Gods
+
+#### Favor Generation
+
+#### Specific Buildings
+
+#### Specific Units
+
 
 > Written with [StackEdit](https://stackedit.io/).
