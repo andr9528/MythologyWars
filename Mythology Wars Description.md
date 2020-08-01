@@ -260,8 +260,8 @@ Training a Villager cost:
 #### Specific Units
 
 ### Atlantean
-
-#### Gods
+The Atlanteans are unique, in that they do not worship Gods, but instead Titans. Titans are more primordial beings, linked with aspects of creation, rendering their upgrades strong, at the cost of weaker God powers.
+#### Titans
 
 #### Favor Generation
 
