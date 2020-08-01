@@ -223,6 +223,12 @@ Much like buildings all Civilizations have a version of the generic units, but a
 - Specific Worshiped God
 	- Not all Units has this requirement
 
+#### Villagers
+Bread and Butter of any civilizations economy, being used to gather resources and build buildings. They are trained from Town Centers, or any unique building that specifies the capability to do so.
+
+Training a Villager cost:
+ - Food: 50
+
 ### Greek
 
 #### Gods
