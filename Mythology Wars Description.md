@@ -15,6 +15,22 @@ Gods that can be worshiped are split into two types, **Major** and **Minor** god
 
 In Age of Mythology when starting a scenario, the player would chose a Major god, but in this game, the player simply has to chose which civilization they wish to be. 
 
+## Weather & Time
+The game has a pretty simple weather system, that only effects a few game-play aspect. If nothing indicates an area effected by weather then the area has by default clear weather.
+
+An area with weather, will be slightly darker, as there is clouds above, blocking out the light. Only the gods, with their god powers, can change the weather from clear to cloudy. Depending on the god causing the cloudiness, players ranged units and buildings in the area might get a slight flat range buff or debuff. Friendly gods buff, and enemy gods debuff.
+
+ - Human Archers, Ranged Heroes, Ranged Mythological Monsters & Buildings
+    `+- 2 Range`
+  - Ranged Siege Units
+   `+- 1 Range`
+
+Cloudy weather can come in two varieties, both of which can exist at the same time. Both varieties has benefits and drawbacks.
+The first variety is Rain clouds, which brings Rain to benefit a players economy, by increasing gather or growth rate of natural things. Units moving in an area with Rain is however slowed by 10%. 
+The Second variety of clouds, are Thunder clouds, which will, depending on the god worshiped, strike enemies for some amount of damage. How much each strike deals, depends on the god in question. Every tree standing in an area with Thunder clouds has a 1% chance every minute to be struck by lighting. If a tree is struck, then it has a 75% chance to be felled and a 25% chance to catch fire, which can spread to other trees close by. If the tree is standing in an area effected by both varieties, then it can not catch fire. 
+
+All units in an areas with clouds lose 10% of their Line of Sight. Areas with Rain clouds, reduces Line of Sight by another 10%. The time of day also has an effect on units Line of Sight, reducing it by up to 20% at midnight. Each day in the game, lasts for 24 minutes, with Dusk at 18:00 and Dawn at 6:00. A game always starts at Dawn.
+
 ## Resources
 The game has a handful of resources that the player has to manage. These resources are as follows:
 
@@ -30,6 +46,7 @@ There is a number of ways to get food. How fast and efficient the generation of 
 
  - From Hunted Wild Animals
  - From Herded Friendly Animals
+ - From Berry Bushes
  - From Fishing
  - From Farming
  - From Passive generation from Relics
@@ -38,18 +55,22 @@ Food is always part of the cost, when the players wants to train units, and as s
 
 Wild and Friendly animals will as long as two or more live, slowly multiply, as such these are also infinite sources of food. This however does require a lot more manually managing to maintain the needed numbers to continue multiplying, and are therefore not something that is recommended to use all game long.
 
+Berry Bushes are another infinite source of food, as the food in a berry bush slowly grows up to three times the starting value of 300. Each second of game time, will have the bush grow another two food. If the berry bush is standing in an area where it is raining this growth is increased by 50%
+
+If an Farm is in an area where it is raining, then the rate of gathering food from the farm is increased by 25%
+
 ### Wood
 Wood is gathered by chopping trees. If three trees stand close by one another, they will grow a new one every minute of game time. As such Wood is a Semi-Infinite resource. It is only Semi, because given enough workers, the amount of trees will decline. Some god powers, can alter how fast trees grow, but as a default, it is one tree per three trees tightly grouped together
 
 Wood is used to build buildings together with stone and sometimes gold and favor. Some amount of wood is also needed to train many types of human soldiers and artillery. The training of mythological monster might also cost wood, but it is uncommon.
 
 #### Trees
-All trees are not equal, meaning some have more wood in them than others. The longer time a tree has lived the more wood it will contain, up to a maximum of three times its starting wood. The starting wood depends on the tree species, which is dependent on where in the world the map takes place. If a tree has been felled by a Village, or any other way, then it will stop increasing the wood contained within, along with not counting towards spawning more trees. How fast the wood contained in a tree grows follows the formula below.
+All trees are not equal, meaning some have more wood in them than others. The longer time a tree has lived the more wood it will contain, up to a maximum of three times its starting wood. The starting wood depends on the tree species, which is dependent on where in the world the map takes place. If a tree has been felled by a Village, or any other way, then it will stop increasing the wood contained within, along with not counting towards spawning more trees. How fast the wood contained in a tree grows follows the formula below. If a Tree stands in an area where it is Raining, then it will grow 25% faster.
 
  - Amount of Wood in Tree
     `Starting Wood * (1 + 0,075) ^ Minutes Since the Tree Spawned`
  
-Trees do not block unit pathing, instead units passing through trees will simply be slowed slightly. Units passing through trees will also have a reduced Line of Sight, and archers arrows or siege weapon fire, might strike the trees instead of their target, reducing their accuracy. All of this can be altered, if a player is worshiping a God that does so, but as a default, this is the rules that apply to trees.
+Trees do not block unit pathing, instead units passing through trees will simply be slowed by 20%. Units passing through trees lose 10% of their Line of Sight,  and archers arrows or siege weapon fire, might strike the trees instead of their target, reducing their accuracy. All of this can be altered, if a player is worshiping a God that does so, but as a default, this is the rules that apply to trees.
 
 By default trees block placement of buildings. This however can be altered, like the other limitations, depending on the gods that are worshiped. If a god allow placement on trees, then the worker will chop the trees in the way, before building the building. They will not gather the resources from the trees, but the trees will be removed, to make room for the building. Due to this, building on trees are slightly slower, but is possible in the right circumstances, if space is running low.
 
@@ -153,7 +174,7 @@ Aura god powers, are constant effects around specified areas of the maps. These 
  - Player units
 As a Aura god power is a Constant effect, they have a lower general impact.
 
-Passive god powers, are effect that can trigger when certain events happen in the game. These events can include, but are not limited to:
+Passive god powers, are effect that can trigger when certain events happen in the game. Sometimes these events are linked with a chance for the Passive god power to trigger, lowering how often the passive god powers takes effect. These events can include, but are not limited to:
  - Player buildings being attacked
  - Player building being destroyed
  - Player buildings deals damage
