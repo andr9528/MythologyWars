@@ -228,6 +228,7 @@ Bread and Butter of any civilizations economy, being used to gather resources an
 
 Training a Villager cost:
  - Food: 50
+ - Population: 1
 
 ### Greek
 
@@ -250,7 +251,7 @@ Training a Villager cost:
 #### Specific Units
 
 ### Norse
-
+The Norse are unique in that they do not use their villager to build buildings with, but instead uses any foot soldier, be it Hero or Human. As long as the foot soldier is are not a cavalry unit, then they can build buildings. The only exception to this rule is Farms, which is still build by the villagers.
 #### Gods
 
 #### Favor Generation
@@ -258,9 +259,26 @@ Training a Villager cost:
 #### Specific Buildings
 
 #### Specific Units
+##### Gatherer; Norse Unique Villager
+This unit replaces the generic Villager, and is only capable of building farms. They do not have any benefits to any particular resource gathering.
+
+##### Dwarf; Norse Unique Villager
+Unique Villager, only accessible as the Norse, who is better at collecting Stone and Gold, but worse at Food and Wood. Each of the resource gather rates are modified by 25%, in their respective directions. They can only build Farms, just like the Gatherer. They are like their generic part Trained at the Town Center.
+
+Training a Dwarf cost:
+ - Food: 75
+ - Population: 1
+##### Ox Cart
+The Norse Drop site for resources collected by their villagers, allowing any resource to be dropped off at them. As it is a unit, it can move around with the Villager. Because of this, they are also slightly more expensive versus other civilizations drop sites, as those are stationary. They are trained at the Town Center
+
+Training an Ox Cart cost:
+ - Food: 50
+ - Wood: 50
+ - Stone: 25
+ - Population: 1
 
 ### Atlantean
-The Atlanteans are unique, in that they do not worship Gods, but instead Titans. Titans are more primordial beings, linked with aspects of creation, rendering their upgrades strong, at the cost of weaker God powers.
+The Atlanteans are unique, in that they do not worship Gods, but instead Titans. Titans are more primordial beings, linked with aspects of creation, rendering their unique upgrades strong, at the cost of weaker God powers.
 #### Titans
 
 #### Favor Generation
