@@ -1,0 +1,4 @@
+[submodule "Wiki"]
+	path = Wiki
+	url = https://github.com/andr9528/MythologyWars.wiki.git
+	branch = master
